@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Equation of Us – Komang Edition</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #f0f0f0;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #ff4b91;
+      margin-bottom: 10px;
+    }
+
+    .question {
+      margin: 30px 0;
+    }
+
+    input, button {
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    input {
+      width: 100px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #ff4b91;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e43e7d;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #cccccc;
+    }
+
+    hr {
+      width: 60%;
+      margin: 40px 0;
+      border: 1px dashed #444;
+    }
+
+    .note {
+      font-size: 0.8em;
+      color: #555;
+      margin-top: 40px;
+    }
+
+    .komang-block {
+      margin-top: 40px;
+    }
+
+    iframe {
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>The Equation of Us</h1>
+
+  <div class="question">
+    <p>1. Solve: 3x + 9 = 30</p>
+    <input type="number" id="q1">
+    <br><button onclick="checkQ1()">Submit</button>
+    <div class="result" id="r1"></div>
+  </div>
+
+  <hr>
+
+  <div class="question">
+    <p>2. If f(x) = 2x² - 4x + 2, what is f(2)?</p>
+    <input type="number" id="q2">
+    <br><button onclick="checkQ2()">Submit</button>
+    <div class="result" id="r2"></div>
+  </div>
+
+  <hr>
+
+  <div class="question">
+    <p>3. Solve for y: 5y - 3 = 2y + 12</p>
+    <input type="number" id="q3">
+    <br><button onclick="checkQ3()">Submit</button>
+    <div class="result" id="r3"></div>
+  </div>
+
+  <hr>
+
+  <div class="question">
+    <p>4. What's the sum of all prime numbers between 1 and 10?</p>
+    <input type="number" id="q4">
+    <br><button onclick="checkQ4()">Submit</button>
+    <div class="result" id="r4"></div>
+  </div>
+
+  <hr>
+
+  <div class="question">
+    <p>5. Last one: If love = ∞, and you're the only variable I need,<br>what's the value of "us"?</p>
+    <input type="text" id="q5" placeholder="your answer here">
+    <br><button onclick="checkQ5()">Submit</button>
+    <div class="result" id="r5"></div>
+  </div>
+
+  <div class="komang-block">
+    <p style="font-size: 0.9em; color: #aaa;">✨ Klik kalau kamu mau Komang nyanyi buat kamu:</p>
+    <iframe width="300" height="170" 
+      src="https://www.youtube.com/embed/q9DwF6H4ACM" 
+      title="Komang - Raim Laode"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p class="note">(P.S. Kalau kamu denger suara... itu Komang, bukan aku. Tapi pesannya tetap tentang kamu. 🎵)</p>
+
+  <script>
+    function checkQ1() {
+      const ans = parseInt(document.getElementById("q1").value);
+      const r = document.getElementById("r1");
+      r.innerHTML = ans === 7 ?
+        "✅ Yes! You're already solving me piece by piece.<br><em>You're the x that balances my equation.</em> 💕" :
+        "❌ Try again, sayang. This x needs more love.";
+    }
+
+    function checkQ2() {
+      const ans = parseInt(document.getElementById("q2").value);
+      const r = document.getElementById("r2");
+      r.innerHTML = ans === 2 ?
+        "✅ Brilliant! Just like f(2) gives 2, you're the solution I keep returning to." :
+        "❌ Close, but not quite. Think quadratic, like our ups and downs 😌";
+    }
+
+    function checkQ3() {
+      const ans = parseInt(document.getElementById("q3").value);
+      const r = document.getElementById("r3");
+      r.innerHTML = ans === 5 ?
+        "✅ Flawless. When things balance, it feels like you and me." :
+        "❌ Hmm... not balanced yet. But we’ll figure it out.";
+    }
+
+    function checkQ4() {
+      const ans = parseInt(document.getElementById("q4").value);
+      const r = document.getElementById("r4");
+      r.innerHTML = ans === 17 ?
+        "✅ Correct! 2+3+5+7 = 17.<br><em>Prime, like your place in my heart.</em> 🧠💗" :
+        "❌ Not quite. But even imperfect answers can be beautifully human.";
+    }
+
+    function checkQ5() {
+      const ans = document.getElementById("q5").value.toLowerCase();
+      const r = document.getElementById("r5");
+      r.innerHTML = (ans === "infinity" || ans === "∞" || ans === "infinite") ?
+        "♾️ You're right. We're infinite. And logic finally feels like poetry with you." :
+        "Hmm... that's deep. But maybe check your spelling—or your heart? 🥹";
+    }
+  </script>
+
+</body>
+</html>
